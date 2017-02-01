@@ -1,5 +1,5 @@
 #include <stdio.h>
-#pragma warning(disable:4996)
+#pragma warning(disable:4996)ㄹㄹㄹㄹ
 
 int fiboCount(int fibo,int* num1, int* num2);
 
