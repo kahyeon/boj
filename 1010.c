@@ -1,27 +1,26 @@
-#include <stdio.h>
-#pragma warning(disable:4996)
-
-int main(){
-	int num,n,m;
+#include<stdio.h>
+int main() {
+	int num;
+	int n,m;
+	int i, j, k; 
 	scanf("%d", &num);
+//n=2, m=4 dp[2][4] = (dp[1][3] + dp[1][2] + dp[1][1])
 
-	
-	for (int i = 0; i < num; i++) {
-		int dp[31][31] = { 0, };
+
+	while (num-- > 0) {
+		int dp[30][30] = { 0, };
 		scanf("%d %d", &n, &m);
-		for (int j = 0; j < m; i++) {
-			dp[1][j] = j;
+		for (i = 0; i <= m; i++) {
+			dp[1][i] = i;
 		}
-		for (int j = 2; j <= n; j++) {
-			for (int k = j; k <= m; k++) {
-				for (int l = k; l >= j; l--) {
-					dp[j][k] += dp[j - 1][l - 1];
+		for (i = 2; i <= n; i++){
+			for (j = i; j <= m; j++){
+				for (k = j; k >= i; k--){
+					dp[i][j] += dp[i - 1][k - 1];
 				}
 			}
 		}
 		printf("%d\n", dp[n][m]);
-		
 	}
-
-	return 0;
+    return 0;
 }

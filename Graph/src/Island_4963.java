@@ -11,9 +11,9 @@ public class Island_4963 {
 		// TODO Auto-generated method stub
 		BufferedReader read = new BufferedReader(new InputStreamReader(System.in));
 		String str[];
-		int count = 0;
+		
 		while(true){
-			int num = 0;
+			int count = 0;
 			str = read.readLine().split(" ");
 			w = Integer.parseInt(str[0]);
 			h = Integer.parseInt(str[1]);
